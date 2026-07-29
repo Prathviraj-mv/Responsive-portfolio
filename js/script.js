@@ -93,12 +93,38 @@ const projectReadmeDetails = {
     'Open-source-2-axis-cnc-plotter': 'The CNC plotter uses an Arduino Uno, GRBL, CNC Shield V3, stepper drivers, and NEMA17 motors for reliable two-axis G-code motion. Its documented workflow runs SVG-to-G-code plotting through Universal G-code Sender, connecting digital design to physical output.'
 };
 
+const projectImages = {
+    'Rocket-Flight-Controller-RFC-PCB': ['images/rocket-flight-controller-pcb/Screenshot 2026-05-21 202211.png', 'images/rocket-flight-controller-pcb/Screenshot 2026-05-21 202656.png'],
+    'CHIMAERA-A1-----Open-source-5-DOF-Robotic-arm': ['images/chimaera-5dof-robotic-arm/IMG_20250628_210058.jpg', 'images/chimaera-5dof-robotic-arm/RENDER1.PNG'],
+    'Flight-controller-for-Active-fin-stabilization-in-Rocketry': ['images/active-fin-stabilization/IMG_20250222_185927.jpg', 'images/active-fin-stabilization/IMG_20250530_203337.jpg'],
+    'Bio-Inspired-Fin-Controlled-Steering-in-Rocketry': ['images/bio-inspired-rocketry/Screenshot 2025-04-08 201104.png', 'images/bio-inspired-rocketry/Screenshot 2025-04-08 212336.png'],
+    'Custom-angular-leg-Quadruped-Robot': ['images/quadruped-robot/520874258-7f52d29a-0045-461e-b233-68f5ef354ffb.png', 'images/quadruped-robot/Screenshot 2025-11-28 114347.png'],
+    'DELTA-robotic-Arm': ['images/delta-robotic-arm/IMG_20251102_135505.jpg', 'images/delta-robotic-arm/Screenshot 2025-10-09 142118.png'],
+    'Linear-Rail-3DOF-Robotic-arm-PRRR-config-with-Teleoperation-System': ['images/prrr-robotic-arm/Screenshot 2026-05-15 230902.png', 'images/prrr-robotic-arm/WhatsApp Image 2026-05-15 at 22.38.59.jpeg'],
+    'Hybrid-ML-LLM-Network-Traffic-Analyzer': ['images/network-traffic-analyzer/img2.png', 'images/network-traffic-analyzer/img4.png'],
+    'Automatic-Railway-Track-Inspection-and-Monitoring-robot-ARIM': ['images/railway-inspection-robot/Screenshot 2026-03-18 160404.png', 'images/railway-inspection-robot/WhatsApp Image 2026-03-18 at 16.04.42.jpeg'],
+    'Arduino-and-STm32-based-Quadcopter': ['images/stm32-quadcopter/IMG_20250325_172036.jpg', 'images/stm32-quadcopter/IMG_20250405_151326.jpg'],
+    'HIGGS-UCI-DATASET': ['images/higgs-ml-pipeline/images (1).jpg'],
+    'Open-source-2-axis-cnc-plotter': ['images/cnc-plotter/Screenshot 2026-02-21 124727.png', 'images/cnc-plotter/WhatsApp Image 2026-02-21 at 12.46.49.jpeg']
+};
+
+const alternateThumbnails = new Set([
+    'Linear-Rail-3DOF-Robotic-arm-PRRR-config-with-Teleoperation-System',
+    'Hybrid-ML-LLM-Network-Traffic-Analyzer',
+    'Custom-angular-leg-Quadruped-Robot',
+    'Automatic-Railway-Track-Inspection-and-Monitoring-robot-ARIM'
+]);
+
 const projectsGrid = document.querySelector('.projects-grid');
 if (projectsGrid) {
-    projectsGrid.innerHTML = portfolioProjects.map(([title, description, repository], index) => `
+    projectsGrid.innerHTML = portfolioProjects.map(([title, description, repository], index) => {
+        const thumbnail = projectImages[repository]?.[alternateThumbnails.has(repository) ? 1 : 0];
+        return `
         <button class="project-card" type="button" data-project-index="${index}" aria-label="View details for ${title}">
             <div class="project-image">
-                <div class="wireframe-placeholder"><span>Project ${String(index + 1).padStart(2, '0')}</span></div>
+                ${thumbnail
+                    ? `<img class="project-thumbnail" src="${encodeURI(thumbnail)}" alt="${title} thumbnail">`
+                    : `<div class="wireframe-placeholder"><span>Project ${String(index + 1).padStart(2, '0')}</span></div>`}
             </div>
             <div class="project-info">
                 <h3>${title}</h3>
@@ -106,7 +132,8 @@ if (projectsGrid) {
                 <span class="project-link">View project <span aria-hidden="true">↗</span></span>
             </div>
         </button>
-    `).join('');
+    `;
+    }).join('');
 }
 
 const projectModal = document.createElement('div');
@@ -117,8 +144,8 @@ projectModal.innerHTML = `
     <section class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
         <button class="project-modal__close" type="button" aria-label="Close project details" data-close-modal>×</button>
         <div class="project-modal__gallery" aria-label="Project image placeholders">
-            <div class="project-modal__image">Image 01</div>
-            <div class="project-modal__image">Image 02</div>
+            <div class="project-modal__image"><img alt="" hidden><span>Image 01</span></div>
+            <div class="project-modal__image"><img alt="" hidden><span>Image 02</span></div>
         </div>
         <div class="project-modal__content">
             <p class="project-modal__eyebrow">Project overview</p>
@@ -137,6 +164,24 @@ function openProjectModal(index) {
     projectModal.querySelector('.project-modal__description').textContent = description;
     projectModal.querySelector('.project-modal__details').textContent = projectReadmeDetails[repository] || description;
     projectModal.querySelector('.project-modal__readme').href = `https://github.com/Prathviraj-mv/${repository}`;
+    const images = projectImages[repository] || [];
+    projectModal.querySelectorAll('.project-modal__image').forEach((imagePanel, imageIndex) => {
+        const image = imagePanel.querySelector('img');
+        const label = imagePanel.querySelector('span');
+        const source = images[imageIndex];
+        if (source) {
+            image.src = encodeURI(source);
+            image.alt = `${title} - image ${imageIndex + 1}`;
+            image.hidden = false;
+            label.hidden = true;
+        } else {
+            image.removeAttribute('src');
+            image.alt = '';
+            image.hidden = true;
+            label.hidden = false;
+            label.textContent = `Image ${String(imageIndex + 1).padStart(2, '0')} coming soon`;
+        }
+    });
     projectModal.classList.add('is-open');
     projectModal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
