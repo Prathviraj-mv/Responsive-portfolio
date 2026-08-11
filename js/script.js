@@ -75,7 +75,10 @@ const portfolioProjects = [
     ['ARIM Railway Inspection Robot', 'Autonomous rail-mounted inspection robot that detects defects using edge AI and marks damaged locations in real time.', 'Automatic-Railway-Track-Inspection-and-Monitoring-robot-ARIM'],
     ['Arduino & STM32 Quadcopter', '3D-printed quadcopter using Arduino, STM32, MPU6050, and BMP280 sensors for stable flight.', 'Arduino-and-STm32-based-Quadcopter'],
     ['HIGGS ML Detection Pipeline', 'Machine-learning pipeline for Higgs boson detection using 12+ classifiers, including XGBoost, LightGBM, CatBoost, neural networks, and SVM.', 'HIGGS-UCI-DATASET'],
-    ['Arduino GRBL CNC Plotter', 'Open-source CNC plotter with Arduino Uno, GRBL firmware, CNC Shield V3, and a Universal G-code Sender workflow.', 'Open-source-2-axis-cnc-plotter']
+    ['Arduino GRBL CNC Plotter', 'Open-source CNC plotter with Arduino Uno, GRBL firmware, CNC Shield V3, and a Universal G-code Sender workflow.', 'Open-source-2-axis-cnc-plotter'],
+    ['Bird Control Laser-Guided Turret', 'Laser-guided bird-control turret that combines real-time targeting with a motorized pan-and-tilt mechanism.', 'Bird-control-using-laser-guided-turret'],
+    ['4-DOF Robotic Arm', 'Four-degree-of-freedom robotic arm designed for precise object handling, embedded control, and automation experiments.', '4-Degree-of-freedom-Robotic-arm'],
+    ['Agricultural Automation Rover', 'Mobile agricultural rover equipped with a robotic arm for autonomous field assistance and farming automation tasks.', 'Rover-equipped-with-a-Robotic-Arm-for-Agricultural-Automation']
 ];
 
 const projectReadmeDetails = {
@@ -90,7 +93,10 @@ const projectReadmeDetails = {
     'Automatic-Railway-Track-Inspection-and-Monitoring-robot-ARIM': 'ARIM is an autonomous rail-mounted inspection robot that uses edge AI to detect track defects and mark damaged locations in real time. The project documents a practical monitoring system for cracks, misalignments, and surface wear, including image-based evidence.',
     'Arduino-and-STm32-based-Quadcopter': 'A 3D-printed quadcopter platform developed in both Arduino Uno and STM32 variants. The build uses MPU6050 and BMP280 sensors as part of its flight-stability hardware and is documented with mechanical and electronics imagery.',
     'HIGGS-UCI-DATASET': 'This is a large-scale Higgs boson detection pipeline built around 12+ classifiers, including gradient boosting, neural networks, SVMs, and hyperparameter optimisation. It compares multiple model families on Large Hadron Collider data rather than relying on a single baseline.',
-    'Open-source-2-axis-cnc-plotter': 'The CNC plotter uses an Arduino Uno, GRBL, CNC Shield V3, stepper drivers, and NEMA17 motors for reliable two-axis G-code motion. Its documented workflow runs SVG-to-G-code plotting through Universal G-code Sender, connecting digital design to physical output.'
+    'Open-source-2-axis-cnc-plotter': 'The CNC plotter uses an Arduino Uno, GRBL, CNC Shield V3, stepper drivers, and NEMA17 motors for reliable two-axis G-code motion. Its documented workflow runs SVG-to-G-code plotting through Universal G-code Sender, connecting digital design to physical output.',
+    'Bird-control-using-laser-guided-turret': 'A motorized laser-guided turret designed for non-lethal bird deterrence. The project combines a pan-and-tilt mechanism with guided aiming to direct the laser accurately across a protected area.',
+    '4-Degree-of-freedom-Robotic-arm': 'A four-degree-of-freedom robotic arm built to explore articulated motion, coordinated joint control, and practical object manipulation. The project documents the mechanical build and its robotic control system.',
+    'Rover-equipped-with-a-Robotic-Arm-for-Agricultural-Automation': 'An agricultural rover that integrates a robotic arm with mobile automation for field operations. The platform explores how navigation, manipulation, and embedded systems can work together to support modern farming workflows.'
 };
 
 const projectImages = {
@@ -105,7 +111,10 @@ const projectImages = {
     'Automatic-Railway-Track-Inspection-and-Monitoring-robot-ARIM': ['images/railway-inspection-robot/Screenshot 2026-03-18 160404.png', 'images/railway-inspection-robot/WhatsApp Image 2026-03-18 at 16.04.42.jpeg'],
     'Arduino-and-STm32-based-Quadcopter': ['images/stm32-quadcopter/IMG_20250325_172036.jpg', 'images/stm32-quadcopter/IMG_20250405_151326.jpg'],
     'HIGGS-UCI-DATASET': ['images/higgs-ml-pipeline/images (1).jpg'],
-    'Open-source-2-axis-cnc-plotter': ['images/cnc-plotter/Screenshot 2026-02-21 124727.png', 'images/cnc-plotter/WhatsApp Image 2026-02-21 at 12.46.49.jpeg']
+    'Open-source-2-axis-cnc-plotter': ['images/cnc-plotter/Screenshot 2026-02-21 124727.png', 'images/cnc-plotter/WhatsApp Image 2026-02-21 at 12.46.49.jpeg'],
+    'Bird-control-using-laser-guided-turret': ['images/bird control/WhatsApp Image 2026-06-13 at 12.02.29 (1).jpeg', 'images/bird control/WhatsApp Image 2026-04-29 at 12.04.01.jpeg'],
+    '4-Degree-of-freedom-Robotic-arm': ['images/4dof robotic arm/IMG_20241207_125614.jpg', 'images/4dof robotic arm/IMG_20241129_195953.jpg'],
+    'Rover-equipped-with-a-Robotic-Arm-for-Agricultural-Automation': ['images/agribot/IMG_20250316_211211.jpg', 'images/agribot/IMG_20250326_075737.jpg']
 };
 
 const alternateThumbnails = new Set([
