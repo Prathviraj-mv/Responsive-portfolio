@@ -67,7 +67,10 @@ const portfolioProjects = [
     ['Rocket Flight Controller PCB', 'Custom Raspberry Pi Pico flight-controller PCB for model rockets, avionics testing, and embedded control systems.', 'Rocket-Flight-Controller-RFC-PCB'],
     ['CHIMAERA A1 - 5DOF Robotic Arm', 'Custom 5-DOF arm using RAMPS stepper control, magnetic encoder feedback, and inverse kinematics.', 'CHIMAERA-A1-----Open-source-5-DOF-Robotic-arm'],
     ['Active Fin Stabilization Flight Controller', 'Real-time active-fin control system for model rocketry using onboard sensor data and embedded processing.', 'Flight-controller-for-Active-fin-stabilization-in-Rocketry'],
-    ['Bio-Inspired Rocket Steering', 'CAD, CFD, and flight-simulation work for a whale-flipper-inspired guided-rocket fin system.', 'Bio-Inspired-Fin-Controlled-Steering-in-Rocketry'],
+    ['Agricultural Automation Rover', 'Mobile agricultural rover equipped with a robotic arm for autonomous field assistance and farming automation tasks.', 'Rover-equipped-with-a-Robotic-Arm-for-Agricultural-Automation'],
+    ['Bird Control Laser-Guided Turret', 'Laser-guided bird-control turret that combines real-time targeting with a motorized pan-and-tilt mechanism.', 'Bird-control-using-laser-guided-turret'],
+    ['4-DOF Robotic Arm', 'Four-degree-of-freedom robotic arm designed for precise object handling, embedded control, and automation experiments.', '4-Degree-of-freedom-Robotic-arm'],
+    ['Arduino GRBL CNC Plotter', 'Open-source CNC plotter with Arduino Uno, GRBL firmware, CNC Shield V3, and a Universal G-code Sender workflow.', 'Open-source-2-axis-cnc-plotter'],
     ['Custom Angular-Leg Quadruped', 'Open-source quadruped robot with custom CAD, PCB electronics, and Arduino walking firmware.', 'Custom-angular-leg-Quadruped-Robot'],
     ['Delta Robotic Arm', 'A 3D-printed 3-DOF delta robotic arm built entirely around revolute joints.', 'DELTA-robotic-Arm'],
     ['Linear-Rail PRRR Robotic Arm', 'Mouse-controlled teleoperation for a rail-mounted robotic arm, combining real-time inverse kinematics, Pygame, and Arduino motor control.', 'Linear-Rail-3DOF-Robotic-arm-PRRR-config-with-Teleoperation-System'],
@@ -75,10 +78,7 @@ const portfolioProjects = [
     ['ARIM Railway Inspection Robot', 'Autonomous rail-mounted inspection robot that detects defects using edge AI and marks damaged locations in real time.', 'Automatic-Railway-Track-Inspection-and-Monitoring-robot-ARIM'],
     ['Arduino & STM32 Quadcopter', '3D-printed quadcopter using Arduino, STM32, MPU6050, and BMP280 sensors for stable flight.', 'Arduino-and-STm32-based-Quadcopter'],
     ['HIGGS ML Detection Pipeline', 'Machine-learning pipeline for Higgs boson detection using 12+ classifiers, including XGBoost, LightGBM, CatBoost, neural networks, and SVM.', 'HIGGS-UCI-DATASET'],
-    ['Arduino GRBL CNC Plotter', 'Open-source CNC plotter with Arduino Uno, GRBL firmware, CNC Shield V3, and a Universal G-code Sender workflow.', 'Open-source-2-axis-cnc-plotter'],
-    ['Bird Control Laser-Guided Turret', 'Laser-guided bird-control turret that combines real-time targeting with a motorized pan-and-tilt mechanism.', 'Bird-control-using-laser-guided-turret'],
-    ['4-DOF Robotic Arm', 'Four-degree-of-freedom robotic arm designed for precise object handling, embedded control, and automation experiments.', '4-Degree-of-freedom-Robotic-arm'],
-    ['Agricultural Automation Rover', 'Mobile agricultural rover equipped with a robotic arm for autonomous field assistance and farming automation tasks.', 'Rover-equipped-with-a-Robotic-Arm-for-Agricultural-Automation']
+    ['Bio-Inspired Rocket Steering', 'CAD, CFD, and flight-simulation work for a whale-flipper-inspired guided-rocket fin system.', 'Bio-Inspired-Fin-Controlled-Steering-in-Rocketry']
 ];
 
 const projectReadmeDetails = {
