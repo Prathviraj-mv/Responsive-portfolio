@@ -22,12 +22,15 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 // Typing Effect for Hero Tagline
 const heroTagline = document.querySelector('.hero-tagline');
 const taglineText = heroTagline ? heroTagline.textContent : '';
+if (heroTagline) heroTagline.textContent = 'Robotics · ML';
 const taglines = [
     'Robotics · Firmware · Machine Learning · AI',
     'Embedded Systems & Intelligent Control',
     'Building Autonomous Machines',
     'From CAD to Real-World Systems'
 ];
+taglines[0] = 'Robotics · ML';
+taglines.length = 1;
 let taglineIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -233,8 +236,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
+// Observe regular sections. The projects section can be taller than a mobile
+// viewport, so a percentage-based observer threshold may never be reached;
+// its cards are observed individually below instead.
+document.querySelectorAll('section:not(.projects-section)').forEach(section => {
     section.classList.add('fade-in');
     observer.observe(section);
 });
